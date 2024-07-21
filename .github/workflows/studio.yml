@@ -21,14 +21,13 @@ concurrency:
 jobs:
   # Build job
   build-and-deploy:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: .
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
         node: [20]
 
     steps:
@@ -38,13 +37,19 @@ jobs:
       - name: Identify package manager
         id: pkgman
         run: |
-          cache=`[ -f "./pnpm-lock.yaml" ] && echo "pnpm" || ([ -f "./package-lock.json" ] && echo "npm" || ([ -f "./yarn.lock" ] && echo "yarn" || echo ""))`
-          package_manager=`[ ! -z "$cache" ] && echo "$cache" || echo "pnpm"`
-          echo "cache=$cache" >> $GITHUB_OUTPUT
-          echo "package_manager=$package_manager" >> $GITHUB OUTPUT
+          if [ -f "./pnpm-lock.yaml" ]; then
+            echo "package_manager=pnpm" >> $GITHUB_ENV
+          elif [ -f "./package-lock.json" ]; then
+            echo "package_manager=npm" >> $GITHUB_ENV
+          elif [ -f "./yarn.lock" ]; then
+            echo "package_manager=yarn" >> $GITHUB_ENV
+          else
+            echo "package_manager=pnpm" >> $GITHUB_ENV
+          fi
+          echo "cache=$package_manager" >> $GITHUB_ENV
 
       - uses: pnpm/action-setup@v4
-        if: ${{ steps.pkgman.outputs.package_manager == 'pnpm' }}
+        if: ${{ env.package_manager == 'pnpm' }}
         name: Install pnpm
         id: pnpm-install
         with:
@@ -53,13 +58,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           version: ${{ matrix.node }}
-          cache: ${{ steps.pkgman.outputs.cache }}
+          cache: ${{ env.cache }}
 
       - name: Install dependencies
-        run: ${{ steps.pkgman.outputs.package_manager }} install
+        run: ${{ env.package_manager }} install
 
       - name: Install @nuxthq/studio
-        run: ${{ steps.pkgman.outputs.package_manager }} add -D @nuxthq/studio
+        run: ${{ env.package_manager }} add -D @nuxthq/studio
 
       - name: Create .nuxtrc
         run: echo $'\nautoImport=true\nmodules[]=@nuxthq/studio' >> .nuxtrc
