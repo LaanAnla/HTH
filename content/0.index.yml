@@ -1,0 +1,46 @@
+hero:
+  title: Hidden Talents Hub
+  description: La plateforme intelligente qui simplifie votre processus de recrutement. Explorez HiddenTalentHub pour une expérience de recrutement réinventée.
+  links:
+    - label: Je m'inscris
+      to: '/login'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+  imageUrl: https://images.unsplash.com/photo-1573164574397-dd250bc8a598?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+sections:
+  - title: Les avantages de notre plateforme
+    description: De nombreux candidats se plaignent du manque de transparence dans le processus de recrutement, notamment en ce qui concerne les critères de sélection, les délais de réponse et les retours sur les candidatures. Ce manque de clarté peut générer de l'anxiété et de la frustration chez les candidats, qui peuvent se sentir laissés dans l'incertitude quant à leur situation et leurs perspectives d'emploi.
+    align: right
+    features:
+      - name: Easy to use
+        description: Id laborum laboris duis nostrud excepteur ut velit.
+        icon: i-heroicons-lock-closed
+      - name: Reliable
+        description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+        icon: i-heroicons-lock-closed
+      - name: Secure
+        description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing.
+        icon: i-heroicons-lock-closed
+    imageUrl: https://plus.unsplash.com/premium_photo-1683121855240-5d3f67a5fdec?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  - title: Les avantages de notre plateforme
+    description: De nombreux candidats se plaignent du manque de transparence dans le processus de recrutement, notamment en ce qui concerne les critères de sélection, les délais de réponse et les retours sur les candidatures. Ce manque de clarté peut générer de l'anxiété et de la frustration chez les candidats, qui peuvent se sentir laissés dans l'incertitude quant à leur situation et leurs perspectives d'emploi.
+    align: left
+    features:
+      - name: Easy to use
+        description: Id laborum laboris duis nostrud excepteur ut velit.
+        icon: i-heroicons-lock-closed
+      - name: Reliable
+        description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+        icon: i-heroicons-lock-closed
+      - name: Secure
+        description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing.
+        icon: i-heroicons-lock-closed
+    imageUrl: https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+features:
+  - title: Les avantages de notre plateforme
+    headline: SAAS
+    description: De nombreux candidats se plaignent du manque de transparence dans le processus de recrutement, notamment en ce qui concerne les critères de sélection, les délais de réponse et les retours sur les candidatures. Ce manque de clarté peut générer de l'anxiété et de la frustration chez les candidats, qui peuvent se sentir laissés dans l'incertitude quant à leur situation et leurs perspectives d'emploi.
+    align: center
