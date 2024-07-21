@@ -48,12 +48,9 @@ jobs:
           fi
           echo "cache=$package_manager" >> $GITHUB_ENV
 
-      - uses: pnpm/action-setup@v4
+      - name: Install pnpm
         if: ${{ env.package_manager == 'pnpm' }}
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 9
+        run: npm install -g pnpm
 
       - uses: actions/setup-node@v4
         with:
