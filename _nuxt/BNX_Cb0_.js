@@ -1,0 +1,1 @@
+import{l as e,e as t,c,f as n}from"./CQW9o_Bo.js";const o={},s=n("h1",null,"Politique de confidentialité",-1),i=[s];function a(l,r){return c(),t("div",null,i)}const d=e(o,[["render",a]]);export{d as default};
